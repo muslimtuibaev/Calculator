@@ -69,8 +69,14 @@ class Calculator {
             default -> System.out.println("Ошибка.");
         }
         if(isRoman){
-            return getValue(result).toString();// для римских
+           try {
+               return getValue(result).toString();// для римских
+           }catch (Exception e){
+               System.out.println("Ошибка.");
+               return "";
+           }
         }
+
         return String.valueOf(result);// для арабских
     }
     public static boolean isNumeric(String strNum) {
